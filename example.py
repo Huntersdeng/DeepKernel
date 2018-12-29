@@ -45,7 +45,7 @@ deepkernel.fit(train_data, train_labels, batch_size=128, epochs=1)
 #%% svm with deepkernel1
 m = test_data.shape[0]
 clf = svm.SVC(kernel=deepkernel.kernel, cache_size=32)
-clf.fit(test_data[0:int(0.5*m)], test_labels[0:int(0.5*m)])   # 只使用20%的数据进行训练，使用80%作为验证集
+clf.fit(test_data[0:int(0.5*m)], test_labels[0:int(0.5*m)])  
 print(clf.score(test_data[int(0.5*m):],test_labels[int(0.5*m):]))
 #%%
 ## svm(kernel:rbf)
@@ -73,5 +73,5 @@ deepkernel2.model_summary()
 deepkernel2.fit(train_data, train_labels, batch_size=128, epochs=1)
 #%%
 clf2 = svm.SVC(kernel=deepkernel2.kernel, cache_size=32)
-clf2.fit(test_data[0:int(0.5*m)], test_labels[0:int(0.5*m)])   # 只使用80%的数据进行训练，使用20%作为验证集
+clf2.fit(test_data[0:int(0.5*m)], test_labels[0:int(0.5*m)])  
 print(clf2.score(test_data[int(0.5*m):],test_labels[int(0.5*m):]))
